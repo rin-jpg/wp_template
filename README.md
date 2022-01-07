@@ -1,7 +1,7 @@
 # wp_template
 WP構築のMyテンプレート
 
-## version
+## Version
 - 2022/01/07 v1.0 最低限の機能のみリリース
 
 ## ToDo
