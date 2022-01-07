@@ -1,0 +1,46 @@
+# Mac
+.DS_Store
+
+# Node.js
+node_modules/
+.nuxt
+
+# Visual Stdio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ignore everything in the root except the "wp-content" directory.
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+**/wp/license.txt
+**/wp/readme.html
+**/wp/wp-*.php
+**/wp/wp-admin/
+**/wp/wp-includes/
+**/wp/xmlrpc.php
+**/wp/wp-content/ewww/
+**/wp/wp-content/index.php
+**/wp/wp-content/languages/
+**/wp/wp-content/plugins/
+**/wp/wp-content/ai1wm-backups/
+**/wp/wp-content/uploads/
+**/wp/wp-content/themes/*
+!**/wp/wp-content/themes/project/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+dist/**/*.html
+dist/_modules/
+dist/assets/css/
+dist/assets/js/
+dist/assets/svg/
+dist/assets/timestamp.txt
+dist/_modules/
