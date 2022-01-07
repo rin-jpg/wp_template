@@ -21,7 +21,7 @@ if ( ! function_exists( 'my_get_hero' ) ) {
 
 // ページタイトル、ディスクリプション出力
 if ( ! function_exists( 'my_get_add_seo' ) ) {
-  function my_get_add_seo( $item, $separater ){
+  function my_get_add_seo( $item, $separater = null ){
     global $post;
 
     if( $item === 'title' ){

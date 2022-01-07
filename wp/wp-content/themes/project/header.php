@@ -21,7 +21,7 @@
   <title><?php echo my_get_add_seo('title', ' | '); ?><?php echo project_config("project_title"); ?></title>
   <?php endif; ?>
   <?php if(!empty(get_field("acf_page_description")) || is_front_page()) : ?>
-  <meta name="description" content="<?php echo my_get_add_seo('description', ''); ?>">
+  <meta name="description" content="<?php echo my_get_add_seo('description'); ?>">
   <?php elseif(is_singular('case') || is_single()) : ?>
   <meta name="description" content="<?php echo $post_description; ?>">
   <?php endif; ?>
@@ -34,7 +34,7 @@
   <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="<?php echo my_get_add_seo('title', ' | '); ?><?php echo project_config("project_title"); ?>">
   <?php if(!empty(get_field("acf_page_description")) || is_front_page()) : ?>
-  <meta property="og:description" content="<?php echo my_get_add_seo('description', ''); ?>">
+  <meta property="og:description" content="<?php echo my_get_add_seo('description'); ?>">
   <?php elseif(is_singular('case') || is_single()) : ?>
   <meta property="og:description" content="<?php echo $post_description; ?>">
   <?php endif; ?>
