@@ -4,3 +4,7 @@
     get_sidebar();
   }
   ?>
+
+<!-- コンテンツ -->
+
+<?php wp_footer(); ?>
