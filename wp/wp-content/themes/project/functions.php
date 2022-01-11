@@ -4,25 +4,28 @@
 require get_template_directory() . '/functions/config.php';
 
 // include: ショートコード関連
-require get_template_directory() . '/functions/shortcode.php';
+require get_template_directory() . '/functions/template-shortcode.php';
 
 // include: ページのカスタム
-require get_template_directory() . '/functions/custom-page.php';
+require get_template_directory() . '/functions/template-page.php';
 
 // include: カスタムフィールド関連
-require get_template_directory() . '/functions/acf.php';
+require get_template_directory() . '/functions/template-acf.php';
 
 // include: スラッグ・カテゴリ関連
-require get_template_directory() . '/functions/slug.php';
+require get_template_directory() . '/functions/template-slug.php';
 
 // include: ページャー関連
-require get_template_directory() . '/functions/pager.php';
+require get_template_directory() . '/functions/template-pager.php';
 
 // include: ループ関連
-require get_template_directory() . '/functions/loop.php';
+require get_template_directory() . '/functions/template-loop.php';
 
 // include: 管理画面のカスタマイズ
-require get_template_directory() . '/functions/custom-admin.php';
+require get_template_directory() . '/functions/template-admin.php';
+
+// include: その他関数
+require get_template_directory() . '/functions/template-tags.php';
 
 
 /**

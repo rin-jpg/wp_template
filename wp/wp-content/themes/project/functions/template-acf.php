@@ -76,7 +76,11 @@ if ( ! function_exists( 'my_get_add_seo' ) ) {
         endif;
       }else{
         // 固定ページ
-        $item = get_field("acf_page_title") . $separater;
+        if(get_field("acf_page_title")){
+          $item = get_field("acf_page_title") . $separater;
+        }else{
+          $item = the_title() . $separater;
+        }
       }
     }else if( $item === 'description' ){
       if(is_front_page() || empty(get_field("acf_page_description"))){
