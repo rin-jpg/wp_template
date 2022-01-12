@@ -69,6 +69,9 @@
     <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/style.css' ); ?>">
   <?php endif; ?>
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/print.css' ); ?>">
+  <?php if( is_404() ): ?>
+  <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/template.css' ); ?>">
+  <?php endif; ?>
   <script>
     document.documentElement.classList.add('js');
     document.documentElement.classList.remove('no-js');

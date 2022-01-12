@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+/**
+ * テンプレートスタイル
+ *
+ * @package WordPress
+ * @subpackage dental-web_2021
+ * @since 1.0.0
+ */
+
+.c-wp-template {
+  width: 700px;
+  max-width: calc(100% - 40px);
+  margin: 50px auto 120px auto;
+  padding: 30px 0;
+  font-size: 16px;
+  /* font-size: 1.6rem; */
+  line-height: 1.75;
+}
+
+.c-wp-template * {
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  list-style: none;
+  border-spacing: 0;
+  border: 0;
+}
+
+.c-wp-template *,
+.c-wp-template *:before,
+.c-wp-template *:after {
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  min-width: 0;
+}
+
+.c-wp-template button,
+.c-wp-template [type="submit"],
+.c-wp-template label[for] {
+  cursor: pointer;
+}
+
+.c-wp-template button {
+  border-radius: 0;
+}
+
+.c-wp-template button:focus {
+  outline: none;
+}
+
+.c-wp-template input,
+.c-wp-template button,
+.c-wp-template select,
+.c-wp-template optgroup,
+.c-wp-template textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.c-wp-template button,
+.c-wp-template input {
+  overflow: visible;
+}
+
+.c-wp-template button,
+.c-wp-template select {
+  text-transform: none;
+}
+
+.c-wp-template button,
+.c-wp-template [type="button"],
+.c-wp-template [type="reset"],
+.c-wp-template [type="submit"] {
+  -webkit-appearance: button;
+}
+
+.c-wp-template button::-moz-focus-inner,
+.c-wp-template [type="button"]::-moz-focus-inner,
+.c-wp-template [type="reset"]::-moz-focus-inner,
+.c-wp-template [type="submit"]::-moz-focus-inner {
+  border-style: none;
+}
+
+.c-wp-template input[type="radio"],
+.c-wp-template input[type="checkbox"] {
+  box-sizing: border-box;
+}
+
+.c-wp-template input[type="date"],
+.c-wp-template input[type="time"],
+.c-wp-template input[type="datetime-local"],
+.c-wp-template input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+.c-wp-template textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+.c-wp-template fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+.c-wp-template legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+.c-wp-template input[type="url"],
+.c-wp-template input[type="tel"],
+.c-wp-template input[type="text"],
+.c-wp-template input[type="number"],
+.c-wp-template input[type="email"],
+.c-wp-template input[type="password"],
+.c-wp-template input[type="search"],
+.c-wp-template textarea,
+.c-wp-template select {
+ border: 1px solid #999999;
+ background-color: #ffffff;
+ outline: none !important;
+ width: 100%;
+ padding: 0 10px;
+ min-height: 40px;
+ border-radius: 0 !important;
+ transition: border-color .35s ease-in-out 0s,
+ box-shadow .35s ease-in-out 0s;
+}
+
+.c-wp-template-header {
+  text-align: left;
+  border-left: 3px solid #333;
+  padding: 8px 0 8px 15px;
+  font-size: 1.5em;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.c-wp-template-header h2 {
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.c-wp-template-header p {
+  font-size: .85em;
+  font-weight: bold;
+}
+
+.c-wp-template-textarea {
+  margin: 2px 0;
+}
+
+/* リスト */
+.c-wp-template-list li {
+  border-bottom: 1px dotted rgb(216, 216, 216);
+}
+.c-wp-template-list a {
+  text-decoration: underline;
+  display: block;
+  padding: 0.75em 1.5em;
+  /* background-color: #f5f5f5; */
+  position: relative;
+  color: rgb(51, 87, 187);
+}
+.c-wp-template-list a:before {
+  content: "";
+  display: block;
+  width: .5em;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: -0.25em;
+  transform: translate3d(0, -50%, 0);
+}
+
+/* btn */
+.c-wp-template-btn {
+  display: flex;
+  width: 270px;
+  max-width: 100%;
+  text-align: center;
+  background-color:#333;
+  border-radius: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1em;
+  margin: 3em auto 1em auto;
+}
+.c-wp-template-btn--start {
+  margin-left: 0;
+}
+
+/* research style */
+.c-wp-template-searcharea {
+  margin: 3em auto;
+  padding: 1.75em 25px 2em 25px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.c-wp-template-searcharea__label {
+  font-size: 1.25em;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+}
+.c-wp-template-searcharea__input {
+  display: flex;
+}
+.c-wp-template-searcharea__other {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px dotted;
+}
+.c-wp-template-searcharea__other .c-wp-template-btn {
+  margin: 0 auto;
+}
+.c-wp-template-searcharea__input [type="text"] {
+  flex: 1 1 auto;
+  display: block;
+  height: 2.5em;
+}
+.c-wp-template-searcharea__input [type="submit"] {
+  flex: 0 0 auto;
+  width: 5em;
+  height: 2.5em;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 1;
+}
+
+
+
+/* max-width(767px) */
+@media screen and (max-width: 767px) {
+  .c-wp-template-header {
+    font-size: 1.35em;
+  }
+
+  .c-wp-template-searcharea {
+    padding: 1.75em 15px 2em 15px;
+  }
+  .c-wp-template-searcharea__input {
+    flex-direction: column;
+  }
+  .c-wp-template-searcharea__input [type="submit"] {
+    width: 100%;
+  }
+}
