@@ -23,6 +23,8 @@ if ( ! function_exists( 'my_get_hero' ) ) {
 if ( ! function_exists( 'my_get_add_seo' ) ) {
   function my_get_add_seo( $item, $separater = null ){
     global $post;
+    $parent_id = $post->post_parent;
+    $parent_title = get_post($parent_id)->post_title;
 
     if( $item === 'title' ){
       if(is_front_page()){
@@ -77,9 +79,17 @@ if ( ! function_exists( 'my_get_add_seo' ) ) {
       }else{
         // 固定ページ
         if(get_field("acf_page_title")){
-          $item = get_field("acf_page_title") . $separater;
+          if(is_page() && $parent_id){
+            $item = get_field("acf_page_title") . $separater . $parent_title . $separater;
+          }else{
+            $item = get_field("acf_page_title") . $separater;
+          }
         }else{
-          $item = the_title() . $separater;
+          if(is_page() && $parent_id){
+            $item = the_title() . $separater . $parent_title . $separater;
+          }else{
+            $item = the_title() . $separater;
+          }
         }
       }
     }else if( $item === 'description' ){
