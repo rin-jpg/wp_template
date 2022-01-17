@@ -32,7 +32,11 @@ function my_get_archive_title() {
 
   //アーカイブページじゃない場合、 false を返す
   if (!is_archive()){
-    return '新着記事';
+    if(is_paged()){
+      return 'ALL - ' . get_query_var('paged') . 'ページ目' ;
+    }else{
+      return 'ALL';
+    }
   }elseif( is_home() || is_archive()){
     return single_term_title('',false);
   }
