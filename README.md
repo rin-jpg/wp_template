@@ -13,3 +13,4 @@ WP構築のMyテンプレート
 
 ## 実装履歴
 - https://kamadoya-onoue3.com/
+- https://kumakenhoku-hp.jp/
