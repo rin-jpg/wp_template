@@ -50,5 +50,8 @@ if ( ! function_exists( 'fv_project_get_cache_clear_source_url' ) ) {
 // <?php echo fv_project_get_cache_clear_source_url( 'assets/css/dev.style.css' ); ? >
 
 
+// アイキャッチ画像を利用できるようにする
+add_theme_support('post-thumbnails');
+
 // add_image_size ( "case_thumb", 350, 260 );
 // add_image_size ( "case_thumb@2x", 700, 520 );
