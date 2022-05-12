@@ -1,32 +1,34 @@
 <?php
 
 // メインループ内での1ページの表示件数
-function my_pre_get_posts( $query ) {
+function fv_pre_get_posts( $query ) {
   if ( is_admin() || ! $query -> is_main_query() ) return;
 
-  if ( $query->is_home() ) {
-    $query->set( 'posts_per_page', '10' );
-  }elseif(is_category()){
-    $query->set( 'posts_per_page', '10' );
-  }elseif(is_date()){
-    $query->set( 'posts_per_page', '10' );
-  }elseif( $query -> is_archive() ) {
-    if ( $query->is_archive(project_config("custom_post_slug")) ) { //カスタム投稿タイプを指定
+  if( $query -> is_archive() ) {
+    if ( $query->is_archive(array('news','blog','pickup')) ) { //カスタム投稿タイプを指定
       if(is_tax()){
-        $query->set( 'posts_per_page', '12' ); //表示件数を指定
+        $query->set( 'posts_per_page', '1' ); //表示件数を指定
+      }elseif(is_date()){
+        $query->set( 'posts_per_page', '1' );
       }else{
-        $query->set( 'posts_per_page', '12' ); //表示件数を指定
+        $query->set( 'posts_per_page', '1' );
       }
     }else{
-      $query -> set( 'posts_per_page', '10' );
+      $query -> set( 'posts_per_page', '1' );
     }
+  }elseif ( $query->is_home() ) {
+    $query->set( 'posts_per_page', '1' );
+  }elseif(is_category()){
+    $query->set( 'posts_per_page', '1' );
+  }elseif(is_date()){
+    $query->set( 'posts_per_page', '1' );
   }
 }
-add_action( 'pre_get_posts', 'my_pre_get_posts' );
+add_action( 'pre_get_posts', 'fv_pre_get_posts' );
 
 // 年月アーカイブの表示
-if ( ! function_exists( 'my_wp_get_archives' ) ) {
-  function my_wp_get_archives($args = array(), $before = null, $after = null) {
+if ( ! function_exists( 'fv_wp_get_archives' ) ) {
+  function fv_wp_get_archives($args = array(), $before = null, $after = null) {
     global $post;
 
     $pattern = array( '/<li>/', '/<a href=\'((?:https?|ftp):\/\/[-_.!~*\'()a-zA-Z0-9;\/?:@&=+$,%#]+)\'>/', '/<\/a>&nbsp;\(([0-9]*)\)/' );

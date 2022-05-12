@@ -1,4 +1,6 @@
 <?php
+$hero_main = 'ページが見つかりませんでした';
+$hero_sub = 'Not Found';
 get_header();
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 get_header();
-$datetime = esc_attr(get_the_date( DATE_W3C ));
+$data = []; // タクソノミー格納用配列
 ?>
 
 <?php
