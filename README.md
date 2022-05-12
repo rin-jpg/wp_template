@@ -10,7 +10,3 @@ WP構築のMyテンプレート
 - 関数命名規則統一
 - ショートコードをシンプルに
 - 諸々モジュール化
-
-## 実装履歴
-- https://kamadoya-onoue3.com/
-- https://kumakenhoku-hp.jp/
