@@ -16,6 +16,8 @@
   global $fv_pagetitle;
   if ($fv_pagetitle) :
     $fv_pagetitle = $fv_pagetitle . '｜' . $fv_sitename;
+  elseif(is_404()):
+    $fv_pagetitle = 'ページが存在しません' . '｜' . $fv_sitename;
   else :
     $fv_pagetitle = get_bloginfo('description') . ' | ' . $fv_sitename;
   endif;
@@ -42,14 +44,9 @@
     $ogimage = get_template_directory_uri() . "/assets/images/og-image.jpg";
   endif;
 
-  // 外部検索除外
-  if (is_page('thanks')) :
-    echo '<meta name="robots" content="noindex , nofollow">';
-  endif;
-
-  $h1home = "h1";
-  if(!is_front_page()){
-    $h1home = "div";
+  $h1home = "div";
+  if(is_front_page()){
+    $h1home = "h1";
   }
 ?>
 <!DOCTYPE html>
@@ -110,7 +107,7 @@
   <?php endif; ?>
   <link rel="stylesheet" href="https://use.typekit.net/giu1yqj.css">
   <?php if(is_single()): ?>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>assets/css/Vendor/wp-editor.css" />
+  <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/wp-editor.css' ); ?>">
   <?php endif; ?>
   <script>
     document.documentElement.classList.add('js');
@@ -120,7 +117,7 @@
 
     <?php /*
 
-    \ \ \ アナリティクス / / /
+    \ \ \ GTM / / /
 
     */ ?>
 

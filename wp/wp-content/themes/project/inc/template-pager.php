@@ -37,73 +37,73 @@ endif;
  * 連番ページャー
  */
 
-function pager_num_list(){
-  global $wp_query, $paged;
+// function pager_num_list(){
+//   global $wp_query, $paged;
 
-  $end_size = 1;
-  $mid_size = 2;
-  $show_all = false; // 全てのページ番号リストを表示するか
-  $posts_per_page = get_query_var('posts_per_page'); // 1ページあたりの件数
-  $current_paged = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1; // 現在のページ番号取得
-  $total_paged = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1; // 全ページ数
-  $total_posts = $wp_query->found_posts; // 全記事件数
+//   $end_size = 1;
+//   $mid_size = 2;
+//   $show_all = false; // 全てのページ番号リストを表示するか
+//   $posts_per_page = get_query_var('posts_per_page'); // 1ページあたりの件数
+//   $current_paged = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1; // 現在のページ番号取得
+//   $total_paged = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1; // 全ページ数
+//   $total_posts = $wp_query->found_posts; // 全記事件数
 
 
-  $is_prev_paged = false; // 前が存在するか
-  $is_next_paged = false; // 次が存在するか
+//   $is_prev_paged = false; // 前が存在するか
+//   $is_next_paged = false; // 次が存在するか
 
-  // ページが2未満の場合はページャーを出力しない
-  if ( $total_paged < 2 ) return false;
+//   // ページが2未満の場合はページャーを出力しない
+//   if ( $total_paged < 2 ) return false;
+
+
+//   /*
+//   * 前後
+//   */
+
+//   // 前のリンク取得
+//   $prev_html = <<< EOM
+//   <a class="p-btn-zengo is-desabled">
+//     <span class="u-size12 u-700 u-family-sans u-uppercase">←</span>
+//   </a>
+// EOM;
+
+//   if ( $current_paged > 1 ) :
+//     $is_prev_paged = true;
+//     $prev_link = esc_url( get_pagenum_link( $current_paged - 1 ) );
+//     $prev_paged_count = $posts_per_page; // 前のページに何件表示できるか
+//     $prev_html = <<< EOM
+//     <a href="{$prev_link}" data-count="{$prev_paged_count}" class="p-btn-zengo">
+//       <span class="u-size12 u-700 u-family-sans u-uppercase">←</span>
+//     </a>
+// EOM;
+//   endif;
+
+
+//   // 次のリンク取得
+//   $next_html = <<< EOM
+//   <a class="p-btn-zengo is-desabled">
+//     <span class="u-size12 u-700 u-family-sans u-uppercase">→</span>
+//   </a>
+// EOM;
+
+//   if ( $current_paged < $total_paged ) :
+//     $is_next_paged = true;
+//     $next_link = esc_url( get_pagenum_link( $current_paged + 1 ) );
+//     $next_paged_count = $current_paged === $total_paged - 1 ? ( $total_posts - $posts_per_page ) % $posts_per_page : $posts_per_page; // 前のページに何件表示できるか
+
+//     if ( $next_paged_count <= 0 ) :
+//       $next_paged_count = $posts_per_page;
+//     endif;
+
+//     $next_html = <<< EOM
+//     <a href="{$next_link}'" data-count="{$next_paged_count}'" class="p-btn-zengo">
+//       <span class="u-size12 u-700 u-family-sans u-uppercase">→</span>
+//     </a>
+// EOM;
+//   endif;
 
 
   /*
-  * 前後
-  */
-
-  // 前のリンク取得
-  $prev_html = <<< EOM
-  <a class="p-btn-zengo is-desabled">
-    <span class="u-size12 u-700 u-family-sans u-uppercase">←</span>
-  </a>
-EOM;
-
-  if ( $current_paged > 1 ) :
-    $is_prev_paged = true;
-    $prev_link = esc_url( get_pagenum_link( $current_paged - 1 ) );
-    $prev_paged_count = $posts_per_page; // 前のページに何件表示できるか
-    $prev_html = <<< EOM
-    <a href="{$prev_link}" data-count="{$prev_paged_count}" class="p-btn-zengo">
-      <span class="u-size12 u-700 u-family-sans u-uppercase">←</span>
-    </a>
-EOM;
-  endif;
-
-
-  // 次のリンク取得
-  $next_html = <<< EOM
-  <a class="p-btn-zengo is-desabled">
-    <span class="u-size12 u-700 u-family-sans u-uppercase">→</span>
-  </a>
-EOM;
-
-  if ( $current_paged < $total_paged ) :
-    $is_next_paged = true;
-    $next_link = esc_url( get_pagenum_link( $current_paged + 1 ) );
-    $next_paged_count = $current_paged === $total_paged - 1 ? ( $total_posts - $posts_per_page ) % $posts_per_page : $posts_per_page; // 前のページに何件表示できるか
-
-    if ( $next_paged_count <= 0 ) :
-      $next_paged_count = $posts_per_page;
-    endif;
-
-    $next_html = <<< EOM
-    <a href="{$next_link}'" data-count="{$next_paged_count}'" class="p-btn-zengo">
-      <span class="u-size12 u-700 u-family-sans u-uppercase">→</span>
-    </a>
-EOM;
-  endif;
-
-
- /*
   * 連番処理
   */
 
@@ -178,4 +178,4 @@ EOM;
 
 // echo $html;
 
-}
+// }

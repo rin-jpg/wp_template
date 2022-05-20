@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: 静的ページ
-*/
 $slug = $post->post_name;
 $hero_main = get_the_title();
 $hero_sub = $slug;

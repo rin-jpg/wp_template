@@ -20,6 +20,11 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.bundle.js"></script>
 <?php if(is_page('contact')): ?>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/yubinbango.js"></script>
+<script>
+  document.addEventListener('wpcf7mailsent', function(event) { // CF7コンバージョン
+    location = '<?php echo home_url(); ?>/contact/thanks/';
+  }, false);
+</script>
 <?php endif; ?>
 <?php echo fv_get_add_field('js') . "\n"; ?>
 <?php wp_footer(); ?>

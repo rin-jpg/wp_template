@@ -4,25 +4,30 @@
 function fv_pre_get_posts( $query ) {
   if ( is_admin() || ! $query -> is_main_query() ) return;
 
+  $count = '10';
+
   if( $query -> is_archive() ) {
-    if ( $query->is_archive(array('news','blog','pickup')) ) { //カスタム投稿タイプを指定
+    if ( $query->is_archive() ) { //カスタム投稿タイプを指定
       if(is_tax()){
-        $query->set( 'posts_per_page', '1' ); //表示件数を指定
+        $count = '1'; //表示件数を指定
       }elseif(is_date()){
-        $query->set( 'posts_per_page', '1' );
+        $count = '1';
       }else{
-        $query->set( 'posts_per_page', '1' );
+        $count = '1';
       }
     }else{
       $query -> set( 'posts_per_page', '1' );
     }
   }elseif ( $query->is_home() ) {
-    $query->set( 'posts_per_page', '1' );
+    $count = '1';
   }elseif(is_category()){
-    $query->set( 'posts_per_page', '1' );
+    $count = '1';
   }elseif(is_date()){
-    $query->set( 'posts_per_page', '1' );
+    $count = '1';
   }
+
+  $query->set( 'posts_per_page', $count );
+
 }
 add_action( 'pre_get_posts', 'fv_pre_get_posts' );
 
