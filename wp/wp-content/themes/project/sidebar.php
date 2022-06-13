@@ -1,11 +1,11 @@
 <div id="body-side" class="l-body__side" data-component="side">
+  <?php
+    $this_post_type = get_post_type();
+    $cat = 'category_' . $this_post_type;
+    $terms = get_terms($cat);
+    if( !empty($terms) && !is_wp_error($terms) ):
+  ?>
   <div id="body-side-inner" class="l-body__side-inner">
-    <?php
-      $this_post_type = get_post_type();
-      $cat = 'category_' . $this_post_type;
-      $terms = get_terms($cat);
-      if( !empty($terms) && !is_wp_error($terms) ):
-    ?>
     <aside class="l-sidebar">
       <header class="l-sidebar__header">
         <h3 class="l-sidebar__header-heading">カテゴリ</h3>
@@ -20,7 +20,6 @@
         ?>
       </ul>
     </aside>
-    <?php endif; ?>
 
     <aside class="l-sidebar">
       <header class="l-sidebar__header">
@@ -39,4 +38,5 @@
       </span>
     </aside>
   </div>
+  <?php endif; ?>
 </div>

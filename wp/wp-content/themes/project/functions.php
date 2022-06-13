@@ -119,6 +119,7 @@ if ( ! function_exists( 'fv_get_archive_title' ) ) {
     }elseif(is_paged()){
       return $post_title. ' - ' . get_query_var('paged') . 'ページ目' ;
     }
+    return $post_title;
   }
 }
 
