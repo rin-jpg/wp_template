@@ -110,7 +110,7 @@
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/Vendor/page-thanks.css' ); ?>">
   <?php endif; ?>
   <?php if(is_single()): ?>
-  <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/wp-editor.css' ); ?>">
+  <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/Vendor/wp-editor.css' ); ?>">
   <?php endif; ?>
   <script>
     document.documentElement.classList.add('js');
