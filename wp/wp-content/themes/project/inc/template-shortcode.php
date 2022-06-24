@@ -36,7 +36,9 @@ add_shortcode('get_directory_root', 'fv_get_directory_root');
 add_filter( 'wp_kses_allowed_html', 'fv_wp_kses_allowed_html', 10, 2 );
 function fv_wp_kses_allowed_html( $tags, $context ) {
 	$tags['img']['srcset'] = true;
+	$tags['img']['data-srcset'] = true;
 	$tags['source']['srcset'] = true;
+	$tags['source']['data-srcset'] = true;
 	$tags['use']['xlink:href'] = true;
 	return $tags;
 }
