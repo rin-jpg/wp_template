@@ -1,24 +1,5 @@
 <?php
 
-// ヒーロータイトル表示
-// if ( ! function_exists( 'fv_get_hero' ) ) {
-//   function fv_get_hero ( $hero ){
-//     if( $hero === 'main' ){
-//       $hero = get_field("acf_page_hero_main");
-//     }else if( $hero === 'sub' ){
-//       $hero = get_field("acf_page_hero_sub");
-//     }else if( $hero === 'parent' ){
-//       $hero = get_field("acf_page_hero_parent");
-//     }else if( $hero === 'img' ){
-//       $hero = get_field("acf_page_hero_image");
-//     }else{
-//       $hero = '';
-//     }
-
-//     return $hero;
-//   }
-// }
-
 // ページ個別のcss,js追加
 if ( ! function_exists( 'fv_get_add_field' ) ) {
   function fv_get_add_field( $item ){
