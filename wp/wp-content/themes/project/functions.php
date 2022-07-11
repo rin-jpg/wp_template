@@ -4,7 +4,7 @@
 require get_template_directory() . '/inc/template-shortcode.php';
 
 // include: カスタムフィールド関連
-// require get_template_directory() . '/inc/template-acf.php';
+require get_template_directory() . '/inc/template-acf.php';
 
 // include: ページャー関連
 require get_template_directory() . '/inc/template-pager.php';

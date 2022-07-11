@@ -138,7 +138,7 @@
           </div>
         </div>
       </header>
-  </div><!-- /#header -->
+    </div><!-- /#header -->
 
     <?php if(!is_front_page()): ?>
     <div id="hero" class="l-hero" data-component="hero" data-view-over="header">
