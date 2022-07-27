@@ -82,3 +82,29 @@ function disable_visual_editor_filter(){
 }
 add_action( 'load-post.php', 'disable_visual_editor_in_page' );
 add_action( 'load-post-new.php', 'disable_visual_editor_in_page' );
+
+
+// カテゴリとタグをメニューから削除
+// function hide_taxonomy_from_menu() {
+//     global $wp_taxonomies;
+ 
+//     // カテゴリーの非表示
+//     if ( !empty( $wp_taxonomies['category']->object_type ) ) {
+//         foreach ( $wp_taxonomies['category']->object_type as $i => $object_type ) {
+//             if ( $object_type == 'post' ) {
+//                 unset( $wp_taxonomies['category']->object_type[$i] );
+//             }
+//         }
+//     }
+ 
+//     // タグの非表示
+//     if ( !empty( $wp_taxonomies['post_tag']->object_type ) ) {
+//         foreach ( $wp_taxonomies['post_tag']->object_type as $i => $object_type ) {
+//             if ( $object_type == 'post' ) {
+//                 unset( $wp_taxonomies['post_tag']->object_type[$i] );
+//             }
+//         }
+//     }
+//     return true;
+// }
+// add_action( 'init', 'hide_taxonomy_from_menu' );
