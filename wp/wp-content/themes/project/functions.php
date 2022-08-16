@@ -128,10 +128,10 @@ if ( ! function_exists( 'fv_get_archive_title' ) ) {
 // アイキャッチ画像を利用できるようにする
 add_theme_support('post-thumbnails');
 
-add_image_size ( "ogp_1200×630", 1200, 630 );
+add_image_size ( "ogp_1200×630", 1200, 630, true );
 
-// add_image_size ( "hoge", 350, 260 );
-// add_image_size ( "hoge@2x", 700, 520 );
+// add_image_size ( "hoge", 350, 260, true );
+// add_image_size ( "hoge@2x", 700, 520, true );
 
 
 /**
