@@ -48,6 +48,10 @@
   if(is_front_page()){
     $h1home = "h1";
   }
+  $h1single = "h1";
+  if(is_single()){
+    $h1single = "div";
+  }
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="ja" prefix="og: http://ogp.me/ns#" data-root="<?php echo get_template_directory_uri(); ?>/" data-assets="<?php echo get_template_directory_uri(); ?>/assets/">
@@ -59,7 +63,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <?php if ($fv_description) : ?>
-    <meta property="og:description" content="<?php echo $fv_description; ?>">
+    <meta name="description" content="<?php echo $fv_description; ?>">
   <?php endif; ?>
   <?php echo meta_noindex(); ?>
   <meta name="author" content="<?php echo $fv_sitename ?>">
@@ -87,9 +91,14 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css" as="style" />
-
+  <?php if(is_front_page()): ?>
+  <link rel="preload" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/front.main.css' ); ?>" as="style">
+  <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/front.main.css' ); ?>">
+  <?php else: ?>
+  <link rel="preload" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/main.css' ); ?>" as="style" />
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/main.css' ); ?>" />
+  <?php endif; ?>
+  
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/main-minMD.css' ); ?>" media="(min-width:768px)" />
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/main-minLG.css' ); ?>" media="(min-width:1024px)" />
 
@@ -105,7 +114,6 @@
   <?php if( is_404() ): ?>
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/template.css' ); ?>">
   <?php endif; ?>
-  <link rel="stylesheet" href="https://use.typekit.net/giu1yqj.css">
   <?php if( is_page('thanks') ): ?>
   <link rel="stylesheet" href="<?php echo fv_project_get_cache_clear_source_url( 'assets/css/Vendor/page-thanks.css' ); ?>">
   <?php endif; ?>
@@ -166,7 +174,7 @@
       }
       ?>
       <div class="l-hero__inner">
-        <h1 id="hero-main" class="l-hero__main"><?php echo $hero_main; ?></h1>
+        <<?php echo $h1single; ?> id="hero-main" class="l-hero__main"><?php echo $hero_main; ?></<?php echo $h1single; ?>>
         <div id="hero-sub" class="l-hero__sub"><?php echo $hero_sub; ?></div>
       </div>
       <div id="hero-page-bgImage" class="l-hero__bg">

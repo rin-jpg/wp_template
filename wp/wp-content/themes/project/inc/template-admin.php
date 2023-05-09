@@ -46,30 +46,6 @@ if ( ! function_exists( 'custom_post_in_activity' ) ) {
   add_action('pre_get_posts', 'custom_post_in_activity');
 }
 
-
-// ウィジェットのタグを非表示に
-add_action( 'init', function() {
-  global $wp_taxonomies;
-
-  // remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
-  // add_action( 'wp_footer','wp_print_head_scripts', 5 );
-
-  // remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  // remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  // remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-  // タグの非表示
-  if ( !empty( $wp_taxonomies[ 'post_tag' ]->object_type ) ) {
-      foreach ( $wp_taxonomies[ 'post_tag' ]->object_type as $i => $object_type ) {
-          if ( $object_type == 'post' ) {
-              unset( $wp_taxonomies[ 'post_tag' ]->object_type[ $i ] );
-          }
-      }
-  }
-
-  return true;
-} );
-
 // 固定ページのみビジュアルエディタ表示を無効
 function disable_visual_editor_in_page(){
   global $typenow;

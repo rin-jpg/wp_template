@@ -6,8 +6,8 @@ function fv_pre_get_posts( $query ) {
 
   $count = '10';
 
-  if( $query -> is_archive() ) {
-    if ( $query->is_archive() ) { //カスタム投稿タイプを指定
+  if( $query -> is_post_type_archive() ) {
+    if ( $query->is_post_type_archive('hoge') ) { //カスタム投稿タイプを指定
       if(is_tax()){
         $count = '1'; //表示件数を指定
       }elseif(is_date()){

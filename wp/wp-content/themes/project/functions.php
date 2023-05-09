@@ -1,5 +1,8 @@
 <?php
 
+// include: 初期設定
+require get_template_directory() . '/inc/template-setup.php';
+
 // include: ショートコード関連
 require get_template_directory() . '/inc/template-shortcode.php';
 
@@ -16,49 +19,19 @@ require get_template_directory() . '/inc/template-loop.php';
 require get_template_directory() . '/inc/template-admin.php';
 
 
-/**
- * 固定ページのみwpautopを削除
- */
-function disable_page_wpautop() {
-  if ( is_page() ){
-    remove_filter( 'the_content', 'wpautop' );
-  }
-}
-add_action( 'wp', 'disable_page_wpautop' );
-
-
-/**
- * リソースのキャッシュ管理
- */
-if ( ! function_exists( 'fv_project_theme_souce' ) ) {
-  function fv_project_get_filemtime( $file_path ) {
-    return date( 'YmdGis', filemtime( $file_path ) );
-  }
-}
-
-/**
- * リソースのキャッシュ管理した上でurlを返す
- * <?php echo fv_project_get_cache_clear_source_url( 'assets/css/dev.style.css' ); ? >
- */
-if ( ! function_exists( 'fv_project_get_cache_clear_source_url' ) ) {
-  function fv_project_get_cache_clear_source_url( $file ) {
-    $param = fv_project_get_filemtime( get_template_directory() . '/' . $file );
-    return get_template_directory_uri() . '/' . $file . '?ver=' . $param;
-  }
-}
-
 
 // 一覧やタイトルのターム名、ページ数など出力
-
 if ( ! function_exists( 'fv_get_archive_title' ) ) {
   function fv_get_archive_title() {
     //カスタム投稿
-    if (is_post_type_archive()){
+    if (is_post_type_archive('pickup')){
       if(is_tax()){ // タクソノミーのアーカイブ => is_tax
         if(is_paged()){
           return single_term_title('',false) . ' - ' . get_query_var('paged') . 'ページ目';
         }
         return single_term_title('',false);
+      } elseif (is_paged()){
+        return single_term_title('',false) . ' - ' . get_query_var('paged') . 'ページ目';
       }
 
       if (is_date()) {
@@ -84,6 +57,8 @@ if ( ! function_exists( 'fv_get_archive_title' ) ) {
       if(is_paged()){
         return get_query_var('paged') . 'ページ目';
       }
+
+      return single_term_title('',false);
     }
 
     //投稿者アーカイブページなら
@@ -122,8 +97,6 @@ if ( ! function_exists( 'fv_get_archive_title' ) ) {
     return $post_title;
   }
 }
-
-
 
 // アイキャッチ画像を利用できるようにする
 add_theme_support('post-thumbnails');

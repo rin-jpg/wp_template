@@ -1,5 +1,16 @@
 <?php
 
+/*【管理画面】ACF Options Page の設定 */
+// if (function_exists('acf_add_options_page')) {
+//   acf_add_options_page(array(
+//     'page_title' => 'オプション', // ページタイトル
+//     'menu_title' => 'オプション', // メニュータイトル
+//     'menu_slug' => 'add_option', // メニュースラッグ
+//     'capability' => 'edit_posts',
+//     'redirect' => false
+//   ));
+// }
+
 // ページ個別のcss,js追加
 if ( ! function_exists( 'fv_get_add_field' ) ) {
   function fv_get_add_field( $item ){
@@ -14,7 +25,6 @@ if ( ! function_exists( 'fv_get_add_field' ) ) {
     return $item;
   }
 }
-
 
 // noindex処理
 if ( ! function_exists( 'meta_noindex' ) ) {
