@@ -14,12 +14,13 @@ add_action( 'init', function() {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
+  // ブロックエディター用CSS 一覧・詳細ページ以外は読み込み停止
   if ( ! is_archive() && ! is_single() ) {
     wp_dequeue_style( 'wp-block-library' );
   }
 
   // フロントページにて、CF7のリソースは不要なので削除
-  if ( is_front_page() ) {
+  if ( ! is_page( 'contact' ) ) {
     wp_deregister_script( 'contact-form-7' );
     wp_deregister_style( 'contact-form-7' );
   }
@@ -91,3 +92,9 @@ function disable_block_editor($use_block_editor, $post_type)
   return $use_block_editor;
 }
 add_filter('use_block_editor_for_post_type', 'disable_block_editor', 10, 10);
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+} 
