@@ -31,6 +31,7 @@ node_modules/
 **/wp/wp-content/uploads/
 **/wp/wp-content/themes/*
 !**/wp/wp-content/themes/project/
+!**/wp/wp-content/themes/project_astro/
 
 # ignore log files and databases
 *.log
