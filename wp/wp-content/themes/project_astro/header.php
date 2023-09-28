@@ -62,8 +62,8 @@
 <html class="" lang="ja" prefix="og: http://ogp.me/ns#" data-root="<?php echo get_template_directory_uri(); ?>/" data-assets="<?php echo get_template_directory_uri(); ?>/assets/">
 
 <head>
-  <title><?php echo $fv_pagetitle; ?></title>
   <meta charset="UTF-8" />
+  <title><?php echo $fv_pagetitle; ?></title>
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <?php if ($fv_description) : ?>

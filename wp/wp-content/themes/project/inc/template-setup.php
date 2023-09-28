@@ -19,7 +19,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'wp-block-library' );
   }
 
-  // フロントページにて、CF7のリソースは不要なので削除
+  // フォーム以外のページでCF7のリソースは不要なので削除
   if ( ! is_page( 'contact' ) ) {
     wp_deregister_script( 'contact-form-7' );
     wp_deregister_style( 'contact-form-7' );

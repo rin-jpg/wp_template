@@ -57,8 +57,8 @@
 <html class="no-js" lang="ja" prefix="og: http://ogp.me/ns#" data-root="<?php echo get_template_directory_uri(); ?>/" data-assets="<?php echo get_template_directory_uri(); ?>/assets/">
 
 <head>
-  <title><?php echo $fv_pagetitle; ?></title>
   <meta charset="utf-8">
+  <title><?php echo $fv_pagetitle; ?></title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
