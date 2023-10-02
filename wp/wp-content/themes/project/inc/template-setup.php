@@ -98,3 +98,11 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 } 
+
+// 似たスラッグで勝手にリダイレクトを防止
+function disable_redirect_canonical( $redirect_url ) {
+  if ( is_404() ) {
+      return false;
+  }
+}
+add_filter("redirect_canonical", "disable_redirect_canonical");
